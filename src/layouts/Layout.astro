@@ -1,0 +1,17 @@
+---
+import Base from "./Base.astro";
+type Props = {
+	title?: string;
+	description?: string;
+};
+
+const { title = 'prl', description } = Astro.props;
+---
+
+<Base {title} {description}>
+	<main class="mt-12 mx-auto max-w-2xl">
+		<article>
+			<slot />
+		</article>
+	</main>
+</Base>

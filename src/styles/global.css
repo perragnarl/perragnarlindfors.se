@@ -1,0 +1,32 @@
+body {
+	@apply text-lg;
+}
+a {
+	@apply text-primary underline decoration-wavy underline-offset-4 opacity-90 transition-opacity ease-in-out hover:opacity-100;
+}
+p {
+	@apply mt-4 leading-loose;
+}
+article {
+	h1 {
+		@apply text-4xl font-bold mb-6;
+	}
+	h2 {
+		@apply text-3xl font-bold mb-6 mt-20;
+	}
+	h3 {
+		@apply text-2xl font-bold mb-6 mt-8;
+	}
+	p {
+		@apply mt-4;
+	}
+	ul {
+		@apply pl-8 list-disc;
+		li {
+			@apply mt-2;
+			h3 {
+				@apply m-0;
+			}
+		}
+	}
+}
