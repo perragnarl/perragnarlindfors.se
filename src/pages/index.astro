@@ -1,9 +1,15 @@
 ---
+import { getCollection } from "astro:content";
+import Posts from "../components/Posts.astro";
 import Layout from "../layouts/Layout.astro";
+
+const posts = (await getCollection("blog")).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+).slice(0, 3);
 ---
 
 <Layout>
-	<div class="max-w-lg">
+	<section>
 		<h1 class="text-5xl font-bold">Hello, hi! 👋</h1>
 		<p>
 			I'm <strong>Per-Ragnar</strong>, a <strong>web developer</strong>
@@ -17,5 +23,9 @@ import Layout from "../layouts/Layout.astro";
 				class="text-primary hover:underline">Tietoevry</a
 			> as a frontend architect (mainly).
 		</p>
-	</div>
+	</section>
+	<section>
+		<h2>Latest blog posts</h2>
+		<Posts {posts} />
+	</section>
 </Layout>

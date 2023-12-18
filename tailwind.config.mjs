@@ -7,12 +7,12 @@ export default {
 		},
 		extend: {
 			colors: {
-				background: "#141212",
 				color: "#fffce1",
 				primary: "#ffb84f",
 				secondary: {
-					100: "#E2E2D5",
-					200: "#888883",
+					DEFAULT: "#141212",
+					dark: "#0d0b0b",
+					light: "#1B1818",
 				},
 			},
 		},

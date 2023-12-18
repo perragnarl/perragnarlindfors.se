@@ -29,4 +29,15 @@ article {
 			}
 		}
 	}
+	section {
+		&:not(:first-child) {
+			@apply mt-32 pt-32 border-t border-color border-dashed border-opacity-20;
+		}
+
+		h1:first-child,
+		h2:first-child,
+		h3:first-child {
+			@apply mt-0;
+		}
+	}
 }

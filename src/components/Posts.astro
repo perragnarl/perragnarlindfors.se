@@ -1,0 +1,31 @@
+---
+import FormattedDate from "./FormattedDate.astro";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+	posts: CollectionEntry<"blog">[];
+}
+
+const { posts } = Astro.props;
+---
+
+<ul class="list-none p-0 w-full flex flex-col gap-y-4">
+	{
+		posts.map((post) => (
+			<li>
+				<a
+					href={`/blog/${post.slug}`}
+					class="no-underline text-color flex flex-col gap-y-4 w-full bg-secondary-light rounded px-4 py-3 hover:text-color"
+				>
+					{post.data.title}
+					<datetime
+						datetime={post.data.pubDate.toISOString()}
+						class="opacity-50 text-sm"
+					>
+						<FormattedDate date={post.data.pubDate} />
+					</datetime>
+				</a>
+			</li>
+		))
+	}
+</ul>

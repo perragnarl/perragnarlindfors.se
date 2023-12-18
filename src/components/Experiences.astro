@@ -10,11 +10,11 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<ul class="flex flex-col gap-y-4 list-none">
+<ul class="flex flex-col gap-y-4 list-none p-0">
 	{
 		items.map((item) => (
 			<li class="flex flex-col gap-y-1">
-				<h3>{item.title}</h3>
+				<h3 class="text-base">{item.title}</h3>
 				{item.subtitle && (
 					<span class="text-sm m-0">{item.subtitle}</span>
 				)}
