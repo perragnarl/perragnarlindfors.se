@@ -15,14 +15,14 @@ const { posts } = Astro.props;
 			<li>
 				<a
 					href={`/blog/${post.slug}`}
-					class="no-underline text-color flex flex-col gap-y-4 w-full bg-secondary-light rounded px-4 py-3 hover:text-color"
+					class="no-underline text-color flex flex-col gap-y-4 w-full bg-secondary-light rounded px-4 py-3"
 				>
 					{post.data.title}
 					<datetime
-						datetime={post.data.pubDate.toISOString()}
+						datetime={post.data.pub.toISOString()}
 						class="opacity-50 text-sm"
 					>
-						<FormattedDate date={post.data.pubDate} />
+						<FormattedDate date={post.data.pub} />
 					</datetime>
 				</a>
 			</li>

@@ -4,7 +4,7 @@ import Posts from "../components/Posts.astro";
 import Layout from "../layouts/Layout.astro";
 
 const posts = (await getCollection("blog")).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+	(a, b) => b.data.pub.valueOf() - a.data.pub.valueOf(),
 ).slice(0, 3);
 ---
 
@@ -21,11 +21,13 @@ const posts = (await getCollection("blog")).sort(
 				target="_blank"
 				rel="noopener noreferrer"
 				class="text-primary hover:underline">Tietoevry</a
-			> as a frontend architect (mainly).
+			> as a frontend architect and developer.
 		</p>
 	</section>
-	<section>
-		<h2>Latest blog posts</h2>
-		<Posts {posts} />
-	</section>
+	{posts.length > 0 && (
+		<section>
+			<h2>Latest blog posts</h2>
+			<Posts {posts} />
+		</section>
+	)}
 </Layout>

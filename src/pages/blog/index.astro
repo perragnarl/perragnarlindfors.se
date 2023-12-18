@@ -4,7 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 import Posts from "../../components/Posts.astro";
 
 const posts = (await getCollection("blog")).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+	(a, b) => b.data.pub.valueOf() - a.data.pub.valueOf(),
 );
 ---
 
